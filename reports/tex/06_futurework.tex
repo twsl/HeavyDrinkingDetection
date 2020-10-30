@@ -1,0 +1,9 @@
+\section{Future Work}\label{sec:futurework}
+For future work we formulate some specific ideas to further improve our machine learning model and the usability for end users.
+On one hand we've created an android application prototype, which can read the accelerometer data readings which are needed when using our model.
+
+Improving the machine learning model presented in this paper could be done in several ways. One way could be to extract even more features, specifically using the accelerometer data as signal data and extract more audio features such as: Continuous wavelet transform, Mel-frequency cepstrum and many more. Together with extracting different statistical features the result could be improved and features that are deemed more usable for our regression can be used. Similarly, analyzing the accelerometer data could also be used to extract features that for example indicate if the participant is walking, sitting or standing. And finally, features with a low correlation could be removed.
+
+Additionally, a new dataset could be collected by recreating the original application from \cite{DBLP:conf/ijcai/KillianPNMC19} and eliminating some shortfalls they had in collecting the data, e.g. loss of phone power, missing or completely unusable data points. Furthermore, using a more solid method of collecting either the transdermal or blood alcohol content could be used and more features could be collected, such as if the participant is taking a drink or if he is present in a bar.
+
+Varying the sliding window length and step size could improve the regression. Using a bigger value range for the hyperparameter optimization and more trials could also help to improve the results as well. And last but not least, evaluating other types of machine learning algorithms such as deep learning models with LSTM cells is feasible. 

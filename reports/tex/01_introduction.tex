@@ -1,0 +1,17 @@
+\section{Introduction}
+
+It's the unfortunate reality that people drive under the influence of alcohol, which leads to accidents that cause injuries and even fatalities. In the age of digitalization, smartphones are becoming more and more the norm. 
+Therefore, it is a responsible decision to take advantage of this technology to prevent people from driving under the influence of alcohol.
+In 85\% of car accidents in Germany causing personal injury, at least one person was under the influence of alcohol \cite{destatis}.
+In addition, 4.5\% of all car accidents in Germany are accidents due to alcohol \cite{statista}.
+To reduce the amount of accidents with alcohol involved, we propose the usage of accelerometer data as an additional indicator  of alcohol consumption level.
+
+We used a prerecorded dataset, which consists of smartphone accelerometer and transdermal alcohol concentration (TAC) data.
+In order to decrease the amount of drunk driving accidents, we aim to train a regressor model that predicts when someone is about to exceed the legally allowed alcohol level.
+On the other hand, such a solution comes with a great responsibility of protecting people's personal information, as some companies may target vulnerable users with more specific ads, insurance companies may raise the monthly bill for reckless drinking and driving under the influence.
+Drunk shopping is an enormous industry and further highlights the significance of responsible acting regarding our topic at hand.
+\begin{quote}
+	``Retailers go to great lengths to capitalize on your drunken stupor and capture a chunk of this ~\$45B market'' \cite{hustle}
+\end{quote}
+
+Even tho \citeauthor{DBLP:conf/ijcai/KillianPNMC19} in \cite{DBLP:conf/ijcai/KillianPNMC19} decided to use a binary prediction formulation rather than a regression formulation, because of the high variance of the accuracy of the \texttt{SCRAM} sensors, we wanted a solution that is not trained on a specific legal limit, and therefore can easily be adopted all over the world regardless of local the laws concerning the legal limit of alcohol consumption. Nonetheless, using the same dataset as \citeauthor{DBLP:conf/ijcai/KillianPNMC19}, we expect to achieve better performance by using a regression formulation for the problem at hand.

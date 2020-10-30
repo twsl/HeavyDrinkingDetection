@@ -1,0 +1,24 @@
+\section{Background}
+The dataset used was downloaded from the UCI Machine Learning Repository \cite{Dua:2019} and is owned by \citeauthor{DBLP:conf/ijcai/KillianPNMC19} \cite{DBLP:conf/ijcai/KillianPNMC19}.
+It contains three-axis time series accelerometer data from mobile phones and time series TAC data, which is a real-time measure of intoxication collected through the skin and was collected by a \texttt{SCRAM} ankle bracelet.
+All data is fully anonymized.
+A total of 20 undergrad students, 10 men and 10 women, each in their senior year, were recruited. The recordings were taking during a bar crawl.
+One participant couldn't install the application, such that no accelerometer data was recorded and the TAC readings for an additional six participants were deemed unusable by \texttt{SCRAM}.
+The accelerometer readings were collected at $40 \si{\hertz}$ by a self made application and periodically send to an InfluxDB server.
+The data was collected from a mix of $11$ iOS and $2$ Android phones.
+Meanwhile, the TAC readings were collected at $30\si{\minute}$ intervals.
+
+Using the IR Voltage and the temperature, cleaned time-series TAC data was calculated from these raw readings.
+The cleaned TAC readings were processed with a zero-phase low-pass filter to smooth noise without shifting phase, then were shifted backwards by 45 minutes such that the labels more closely match the true intoxication of the participant, since alcohol takes about 45 minutes to exit through the skin.
+Cleaned TAC readings which are more readily usable for processing have two columns: a timestamp and TAC reading. 
+This results in $14 057 567$ accelerometer readings and $715$ TAC readings for a total of 13 participants.
+The TAC is measured in grams per deci liter where $0.08 \frac{\si{\gram}}{\si{\deci\litre}}$ is the legal limit for intoxication while driving in California and $0.05 \frac{\si{\gram}}{\si{\deci\litre}}$ in Germany.
+
+In the end there are three sets of data: three-axis time-series accelerometer, the cleaned time-series TAC and the uncleaned time-series TAC data.
+For further details on how the data was processed see the original paper \cite{DBLP:conf/ijcai/KillianPNMC19}.
+
+For this particular use-case the usage of \texttt{SCRAM} ankle bracelets was unproblematic, but generally speaking, especially with regards to law enforcement and the current Covid pandemic, the evaluation is prone to faults by disinfectants containing alcohol like hand sanitizers and even tiny alcohol splashes. These events can falsify the readings of the aforementioned ankle bracelet. 
+
+The National Highway Traffic Safety Administration deemed the technology of transdermal alcohol measuring valid, but ``the actual equipment with false-negatives rates [...] are too high'' \cite{nhtsa_scram}. 
+
+
